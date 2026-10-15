@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://domlqpm26ipk1"]
+
+[ext_resource type="PackedScene" uid="uid://3oygx77woupr" path="res://main_board/ui/template_ui/score_ui.tscn" id="1_7uylb"]
+[ext_resource type="PackedScene" uid="uid://crv8m1mq4kaxq" path="res://minigames/example_steps/Player Counter.tscn" id="1_qpy8s"]
+
+[sub_resource type="Gradient" id="Gradient_7uylb"]
+offsets = PackedFloat32Array(0, 0.49386504, 0.5736196, 1)
+colors = PackedColorArray(0.144, 0.28680003, 0.45, 1, 0.37260002, 0.54, 0.45909002, 1, 0.95, 0.81478333, 0.37049997, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_txsxn"]
+gradient = SubResource("Gradient_7uylb")
+width = 128
+height = 128
+fill_from = Vector2(1, 1)
+
+[node name="StepsgameMain" type="Node" unique_id=671128851]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1348578390]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_txsxn")
+
+[node name="Player1" parent="." unique_id=1159467376 instance=ExtResource("1_qpy8s")]
+position = Vector2(418, 470)
+
+[node name="Player2" parent="." unique_id=189950828 instance=ExtResource("1_qpy8s")]
+position = Vector2(668, 470)
+player_number = 1
+
+[node name="Player3" parent="." unique_id=2135970063 instance=ExtResource("1_qpy8s")]
+position = Vector2(918, 470)
+player_number = 2
+
+[node name="Player4" parent="." unique_id=1268821820 instance=ExtResource("1_qpy8s")]
+position = Vector2(1168, 470)
+player_number = 3
+
+[node name="ScoreUI" parent="." unique_id=1154046883 instance=ExtResource("1_7uylb")]
+timer_initial_value = 10.0
+
+[connection signal="player_increase" from="Player1" to="ScoreUI" method="increase_score"]
+[connection signal="player_increase" from="Player2" to="ScoreUI" method="increase_score"]
+[connection signal="player_increase" from="Player3" to="ScoreUI" method="increase_score"]
+[connection signal="player_increase" from="Player4" to="ScoreUI" method="increase_score"]
