@@ -24,7 +24,7 @@ func next_turn():
 var rankings = [0,1,2,3] #Must be set using set_rankings when a minigame ends.
 var selected_minigame : MinigameData
 
-func set_rankings(ranks : Array[int]):
+func set_rankings(ranks):
 	rankings = []
 	if len(ranks) != 4: return
 	var seen = []
@@ -56,6 +56,6 @@ func load_minigames():
 			load_failed_dirs.append(i)
 	return result
 
-func end_minigame(ranks : Array[int]):
+func end_minigame(ranks):
 	set_rankings(ranks)
 	Transition.transition_to("res://main_board/rooms/results.tscn")
