@@ -13,6 +13,13 @@ var player_positions = [0,0,0,0]
 var player_turn = 0 #eg: 0 means it's player 1's turn
 var round = 0
 
+func reset():
+	player_turn = 0
+	round = 0
+	player_positions = [0,0,0,0]
+	rankings = [0,1,2,3]
+	selected_minigame = null
+
 func next_turn():
 	var pos = rankings.find(player_turn)
 	print("pos is %s" % str(pos))
