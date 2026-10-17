@@ -10,6 +10,7 @@ var jumping := false
 var from_pos : Vector3
 var to_pos : Vector3
 var progress = 0.0
+var jump_speed = 1
 @onready var offset = Vector3(1, 0, 1).rotated(Vector3(0, 1, 0), player_number*PI/2)
 signal jumping_finished
 signal jumping_false
@@ -32,13 +33,14 @@ func set_face(face : FaceData):
 func _process(delta):
 	if jumping:
 		position = from_pos.lerp(to_pos, progress) + Vector3.UP * sin(progress*PI) * 2
-		progress += delta*5
+		progress += delta*jump_speed
 		if progress > 1:
 			position = to_pos
 			jumping = false
 			emit_signal("jumping_false")
 
-func jump_to_places(positions : Array[Vector3]):
+func jump_to_places(positions: Array[Vector3], speed:=5):
+	jump_speed = speed
 	for pos in positions:
 		if pos+offset != position:
 			jumping = true

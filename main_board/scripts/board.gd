@@ -24,14 +24,20 @@ const BRONZE_DIE = preload("uid://qdg7m3leedrp")
 ]
 
 @export var string_data: String
+@export var space_data : Array[Space]
 @export var path : Path3D
 
 var space_positions : Array[Vector3] = []
 
 
 func _ready():
+<<<<<<< Updated upstream:main_board/scripts/space_generator.gd
+=======
+	Global.selected_minigame = null
+	Global.player_turn = Global.rankings[0]
+>>>>>>> Stashed changes:main_board/scripts/board.gd
 	var still_turns_left = true
-	add_spaces_from_str(string_data)
+	add_spaces_from_spacedata(space_data)
 	for i in range(4):
 		players[i].position = space_positions[Global.player_positions[i]]
 	
@@ -49,6 +55,14 @@ func _ready():
 		if result > 0:
 			print("player jumps to pos " + str(target_pos))
 			await players[Global.player_turn].jump_to_places(space_positions.slice(current_pos, target_pos+1))
+			var move_amount = space_data[target_pos].move_amount
+			if move_amount != 0:
+				await get_tree().create_timer(1).timeout
+				target_pos += move_amount
+				var position_array: Array[Vector3] = [(space_positions[target_pos])]
+				players[Global.player_turn].jump_to_places(position_array, 1)
+				await get_tree().create_timer(1.5).timeout
+				
 		Global.player_positions[Global.player_turn] = target_pos
 		still_turns_left = Global.next_turn()
 		await get_tree().create_timer(0.5).timeout
@@ -56,33 +70,23 @@ func _ready():
 	new_round_label.text = "Now starting... Round %s" % str(Global.round)
 	animation_player.play("newround")
 
-func add_spaces_from_str(string):
+
+func add_spaces_from_spacedata(data:Array[Space]):
 	var i = 0
-	var negative = false
-	for s in string:
+	for space in data:
 		var space_inst
-		if s == "-":
-			negative = true
-			continue
-		if int(s) != 0:
-			space_inst = MOVE_SPACE.instantiate()
-			if negative:
-				space_inst.set_amount(-int(s))
-			else:
-				space_inst.set_amount(int(s))
-		else:
-			space_inst = SPACE.instantiate()
-		#match s:
-			#"m":
-				#data = MinigameSpace.new()
-			#"v":
-				#data = VictorySpace.new()
-				
+		match space.space_type:
+			0:
+				space_inst = SPACE.instantiate()
+			1:
+				space_inst = MOVE_SPACE.instantiate()
+				space_inst.set_amount(space.move_amount)
 		space_inst.transform = path.curve.sample_baked_with_rotation(i*8)
 		space_inst.rotation *= Vector3(1, 0, 0)
 		i += 1
 		add_child(space_inst)
 		space_positions.append(space_inst.position)
+
 func roll_dice():
 	dice_roller.die_list = [REGULAR_DIE.instantiate()]
 	match Global.rankings.get(Global.player_turn):
