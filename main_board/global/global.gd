@@ -1,16 +1,20 @@
 extends Node
 
+# REFACTOR: copy to shared
 const PLAYER_COLOURS = [
 	Color("F27C6F"),
 	Color("28AAD4"),
 	Color("F8FF57"),
 	Color("523FB0")
 ]
+var player_count :int = 4
 
-var player_faces : Array[FaceData]= [FaceData.new(), FaceData.new(), FaceData.new(), FaceData.new()]
+# REFACTOR: copy to shared
+var player_faces :Array[FaceData] = [FaceData.new(), FaceData.new(), FaceData.new(), FaceData.new()]
+# REFACTOR: no
 var player_positions = [0,0,0,0]
 
-var player_turn = 0 #eg: 0 means it's player 1's turn
+var player_turn = 0 # eg: 0 means it's player 1's turn
 var round = 0
 
 func next_turn():
@@ -21,17 +25,8 @@ func next_turn():
 	player_turn = rankings[pos+1]
 	return true	
 
-var rankings = [0,1,2,3] #Must be set using set_rankings when a minigame ends.
+var rankings : Array[int]= [0,1,2,3] # Must be set using set_rankings when a minigame ends.
 var selected_minigame : MinigameData
-
-func set_rankings(ranks):
-	rankings = []
-	if len(ranks) != 4: return
-	var seen = []
-	for i in ranks:
-		if i in seen or i < 0 or i > 3: return
-		seen.append(i)
-	rankings = ranks
 
 func load_minigames():
 	var result = []
@@ -56,6 +51,29 @@ func load_minigames():
 			load_failed_dirs.append(i)
 	return result
 
+# REFACTOR: new function
+func check_rankings(ranks : Array[int]) -> bool:
+	if len(ranks) != player_count:
+		printerr("Rankings length %s does not match player count %s" % [len(ranks), player_count])
+		return false
+	var seen = []
+	for i in ranks:
+		if i in seen:
+			printerr("Rankings have a duplicate %s" % [ranks])
+		if i < 0 or i > 3:
+			printerr("Rankings rankings contain invalid players %s" % [ranks])
+			return false
+		seen.append(i)
+
+	return true
+
+# REFACTOR: move to shared, make failures not silent
+func set_rankings(ranks : Array[int]):
+	rankings = []
+	if check_rankings(ranks):
+		rankings = ranks
+
+# REFACTOR: connect via signals, maybe move to Transition
 func end_minigame(ranks):
 	set_rankings(ranks)
 	Transition.transition_to("res://main_board/rooms/results.tscn")
