@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://onpyx3kh26ao"]
 
 [ext_resource type="Script" uid="uid://dfarr37g77n1m" path="res://main_board/objects/playerpiece.gd" id="1_c76ck"]
-[ext_resource type="Texture2D" uid="uid://bta2ta006dpei" path="res://main_board/sprites/eyes.png" id="1_tilx6"]
-[ext_resource type="Texture2D" uid="uid://by542wghjv81p" path="res://main_board/sprites/noses.png" id="2_c76ck"]
-[ext_resource type="Texture2D" uid="uid://d3xq0p1l61iig" path="res://main_board/sprites/mouths.png" id="3_tfif6"]
+[ext_resource type="Texture2D" uid="uid://bta2ta006dpei" path="res://shared/faces/sprites/eyes.png" id="1_tilx6"]
+[ext_resource type="Texture2D" uid="uid://by542wghjv81p" path="res://shared/faces/sprites/noses.png" id="2_c76ck"]
+[ext_resource type="Texture2D" uid="uid://d3xq0p1l61iig" path="res://shared/faces/sprites/mouths.png" id="3_tfif6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txsxn"]
 vertex_color_use_as_albedo = true
