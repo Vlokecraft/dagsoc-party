@@ -48,3 +48,4 @@ func jump_to_places(positions : Array[Vector3]):
 			to_pos +=offset
 			await jumping_false
 	emit_signal("jumping_finished")
+	

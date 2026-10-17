@@ -11,7 +11,7 @@ var player_faces : Array[FaceData]= [FaceData.new(), FaceData.new(), FaceData.ne
 var player_positions = [0,0,0,0]
 
 var player_turn = 0 #eg: 0 means it's player 1's turn
-var round = 1
+var round = 0
 
 func next_turn():
 	var pos = rankings.find(player_turn)

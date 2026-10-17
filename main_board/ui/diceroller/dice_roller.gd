@@ -15,7 +15,7 @@ signal finished(val)
 
 func run():
 	result = 0
-	rolled = false
+	rolled = true
 	var length = len(die_list)
 	dice_waiting_on = length
 	var pos = (0.5-length*0.5) *SPACING
@@ -26,11 +26,12 @@ func run():
 		i.position = i.initial_pos
 		pos += SPACING
 		die_nodes.append(i)
+	rolled = false
 	
 		
 
 func _input(event):
-	if Input.is_action_just_pressed(action) and not rolled:
+	if Input.is_action_just_pressed(action) and not rolled and die_list:
 		rolled = true
 		for i in die_list:
 			i.trigger()

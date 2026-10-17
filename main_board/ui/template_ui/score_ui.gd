@@ -78,7 +78,6 @@ func finished():
 	for i in zipped:
 		results.append(i[1])
 	results.reverse()
-	get_tree().paused = false
 	Global.end_minigame(results)
 #func get_first(a):
 	#return a[0]

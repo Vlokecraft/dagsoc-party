@@ -8,3 +8,4 @@ func transition_to(path:String):
 
 func _change_scene():
 	get_tree().change_scene_to_file(destination)
+	get_tree().paused = false

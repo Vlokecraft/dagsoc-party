@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://domlqpm26ipk1"]
 
 [ext_resource type="PackedScene" uid="uid://3oygx77woupr" path="res://main_board/ui/template_ui/score_ui.tscn" id="1_7uylb"]
-[ext_resource type="PackedScene" uid="uid://crv8m1mq4kaxq" path="res://minigames/example_steps/Player Counter.tscn" id="1_qpy8s"]
+[ext_resource type="PackedScene" uid="uid://crv8m1mq4kaxq" path="res://minigames/example_counter/Player Counter.tscn" id="1_qpy8s"]
 
 [sub_resource type="Gradient" id="Gradient_7uylb"]
 offsets = PackedFloat32Array(0, 0.49386504, 0.5736196, 1)

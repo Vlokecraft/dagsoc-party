@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MinigameData" format=3 uid="uid://dsh350351t7aq"]
+
+[ext_resource type="Script" uid="uid://ciry1a2b6alm5" path="res://main_board/resources/MinigameData.gd" id="1_wm5r7"]
+
+[resource]
+script = ExtResource("1_wm5r7")
+title = "Example Counter Minigame"
+author = "Harry"
+how_to_play = "This is a bit like the pullups minigame in Wii Party. Press the bottom button to increase your score. Highest score wins. Mainly a test of the leaderboard/timer system."
+main_scene_path = "res://minigames/example_counter/main_scene/countertest-main.tscn"
+metadata/_custom_type_script = "uid://ciry1a2b6alm5"

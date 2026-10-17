@@ -6,6 +6,7 @@ extends Control
 @onready var thumbnail_texture = $ThumbnailTexture
 
 func _ready():
+	randomize()
 	if Global.selected_minigame == null:
 		Global.selected_minigame = Global.load_minigames().pick_random()
 	title_label.text = Global.selected_minigame.title
