@@ -78,6 +78,6 @@ func finished():
 	for i in zipped:
 		results.append(i[1])
 	results.reverse()
-	Global.end_minigame(results)
+	Interface.end_minigame(results)
 #func get_first(a):
 	#return a[0]
