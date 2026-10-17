@@ -11,7 +11,7 @@ const PlayerScript = preload("player.gd")
 @onready var round_timer :Timer = $RoundTimer/Timer
 @onready var timer_label :Label = $RoundTimer/Label
 
-const PLAYER_COUNT :int = 4
+var PLAYER_COUNT :int = Interface.player_count
 const TIME_LIMIT_SECONDS :float = 10.0
 const TIME_PLAYER_SWITCH_ANIMATION_SECONDS :float = 0.15
 
@@ -49,7 +49,7 @@ func _process(_delta :float) -> void:
 
 func _create_player(player_index: int) -> void:
 	var player :PlayerScript = player_scene.instantiate()
-	var player_colour :Color= Global.PLAYER_COLOURS[player_index]
+	var player_colour :Color= Interface.PLAYER_COLOURS[player_index]
 
 	rankings.append(player_index)
 	
@@ -109,4 +109,4 @@ func _check_player_input() -> void:
 func _on_round_timer_timeout() -> void:
 	timer_label.text = "Time's up!"
 	await get_tree().create_timer(2.0).timeout
-	Global.end_minigame(rankings) # necessary to finish the game, ranking is array player idx(0-3) -> position
+	Interface.end_minigame(rankings.duplicate()) # necessary to finish the game, ranking is array player idx(0-3) -> position

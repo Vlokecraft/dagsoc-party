@@ -1,12 +1,6 @@
 extends Node
 
 # REFACTOR: copy to shared
-const PLAYER_COLOURS = [
-	Color("F27C6F"),
-	Color("28AAD4"),
-	Color("F8FF57"),
-	Color("523FB0")
-]
 var player_count :int = 4
 
 # REFACTOR: copy to shared
@@ -16,6 +10,9 @@ var player_positions = [0,0,0,0]
 
 var player_turn = 0 # eg: 0 means it's player 1's turn
 var round = 0
+
+func _ready() -> void:
+	Interface.minigame_finished.connect(end_minigame)
 
 func next_turn():
 	var pos = rankings.find(player_turn)
@@ -51,27 +48,12 @@ func load_minigames():
 			load_failed_dirs.append(i)
 	return result
 
-# REFACTOR: new function
-func check_rankings(ranks : Array[int]) -> bool:
-	if len(ranks) != player_count:
-		printerr("Rankings length %s does not match player count %s" % [len(ranks), player_count])
-		return false
-	var seen = []
-	for i in ranks:
-		if i in seen:
-			printerr("Rankings have a duplicate %s" % [ranks])
-		if i < 0 or i > 3:
-			printerr("Rankings rankings contain invalid players %s" % [ranks])
-			return false
-		seen.append(i)
-
-	return true
 
 # REFACTOR: move to shared, make failures not silent
 func set_rankings(ranks : Array[int]):
 	rankings = []
-	if check_rankings(ranks):
-		rankings = ranks
+	if Interface.check_rankings(ranks):
+		rankings = ranks.duplicate()
 
 # REFACTOR: connect via signals, maybe move to Transition
 func end_minigame(ranks):

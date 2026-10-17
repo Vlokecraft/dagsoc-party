@@ -18,7 +18,7 @@ var data : FaceData:
 	set(value):
 		player_number = value
 		data = Global.player_faces[value]
-		self_modulate = Global.PLAYER_COLOURS[value]
+		self_modulate = Interface.PLAYER_COLOURS[value]
 		
 
 func _ready():

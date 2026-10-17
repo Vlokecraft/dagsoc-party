@@ -18,7 +18,7 @@ signal jumping_false
 
 func _ready():
 	var material = StandardMaterial3D.new()
-	material.albedo_color = Global.PLAYER_COLOURS[player_number]
+	material.albedo_color = Interface.PLAYER_COLOURS[player_number]
 	material.vertex_color_use_as_albedo = true
 	body.set_surface_override_material(0, material)
 	set_face(Global.player_faces[player_number])

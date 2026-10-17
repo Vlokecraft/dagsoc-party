@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjpqfpa3x6f56"]
 
-[ext_resource type="Script" path="scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bentc335mlicp" path="res://minigames/minigame-template/scripts/main.gd" id="1_ig7tw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
 font_size = 22
@@ -62,15 +62,18 @@ text = "IV"
 label_settings = SubResource("LabelSettings_ig7tw")
 
 [node name="RoundTimer" type="Node2D" parent="." unique_id=1297412691]
+position = Vector2(580, 321)
 
 [node name="Timer" type="Timer" parent="RoundTimer" unique_id=843569113]
 wait_time = 0.5
 one_shot = true
 
 [node name="Label" type="Label" parent="RoundTimer" unique_id=1273283481]
-offset_left = 501.0
-offset_top = 306.0
-offset_right = 596.0
-offset_bottom = 337.0
+offset_left = -76.0
+offset_top = -16.0
+offset_right = 19.0
+offset_bottom = 15.0
 text = "Time: ..."
 label_settings = SubResource("LabelSettings_ig7tw")
+
+[node name="Camera2D" type="Camera2D" parent="RoundTimer" unique_id=1290191470]
