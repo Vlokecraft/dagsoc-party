@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dmpg0ghp6iby3"]
+
+[ext_resource type="Script" path="res://main_board/rooms/game_complete.gd" id="1_pg507"]
+[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://default_theme.tres" id="4_uromb"]
+[ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://main_board/resources/player_visual_2d/player_visual_2d.tscn" id="5_ks0mk"]
+
+[node name="Results" type="Control" unique_id=1993985079]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pg507")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=835745178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Results" type="Label" parent="." unique_id=1331706108]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 56.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme = ExtResource("4_uromb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "this guy won
+your did it"
+horizontal_alignment = 1
+
+[node name="Continue Prompt" type="Label" parent="." unique_id=230572171]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_uromb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "- Player 1 press confirm to continue -"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=2007122274]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Player Visual" parent="." unique_id=1416784719 instance=ExtResource("5_ks0mk")]
+position = Vector2(800, 469)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

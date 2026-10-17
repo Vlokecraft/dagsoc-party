@@ -31,11 +31,7 @@ var space_positions : Array[Vector3] = []
 
 
 func _ready():
-<<<<<<< Updated upstream:main_board/scripts/space_generator.gd
-=======
 	Global.selected_minigame = null
-	Global.player_turn = Global.rankings[0]
->>>>>>> Stashed changes:main_board/scripts/board.gd
 	Global.player_turn = Global.rankings[0]
 	var still_turns_left = true
 	add_spaces_from_spacedata(space_data)
