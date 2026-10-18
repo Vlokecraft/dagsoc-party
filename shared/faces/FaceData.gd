@@ -18,3 +18,13 @@ var nose_pos : int = 2:
 var mouth_pos : int = 2:
 	set(value):
 		mouth_pos = clamp(value, 0, 4)
+
+func copy() -> FaceData:
+	var face := FaceData.new()
+	face.eye_type = eye_type
+	face.nose_type = nose_type
+	face.mouth_type = mouth_type
+	face.eye_position = eye_position
+	face.nose_pos = nose_pos
+	face.mouth_pos = mouth_pos
+	return face

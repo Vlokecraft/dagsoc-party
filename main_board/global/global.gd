@@ -1,18 +1,31 @@
 extends Node
 
-const PLAYER_COLOURS = [
-	Color("F27C6F"),
-	Color("28AAD4"),
-	Color("F8FF57"),
-	Color("523FB0")
-]
+# REFACTOR: copy to shared
+var player_count :int = 4
 
-var player_faces : Array[FaceData]= [FaceData.new(), FaceData.new(), FaceData.new(), FaceData.new()]
+# REFACTOR: copy to shared
+var player_faces :Array[FaceData] = [FaceData.new(), FaceData.new(), FaceData.new(), FaceData.new()]
+# REFACTOR: no
 var player_positions = [0,0,0,0]
 
-var player_turn = 0 #eg: 0 means it's player 1's turn
+var player_turn = 0 # eg: 0 means it's player 1's turn
 var round = 0
 
+func _ready() -> void:
+	Interface.minigame_finished.connect(end_minigame)
+
+func sync_faces_to_interface() -> void:
+	if player_faces.size() != player_count:
+		printerr("Expected one face per player slot (%s)." % player_count)
+		return
+
+	var faces: Array[FaceData] = []
+	for face in player_faces:
+		if face == null:
+			printerr("Player faces cannot be null.")
+			return
+		faces.append(face.copy())
+	Interface.player_faces = faces
 func reset():
 	player_turn = 0
 	round = 0
@@ -28,17 +41,8 @@ func next_turn():
 	player_turn = rankings[pos+1]
 	return true	
 
-var rankings = [0,1,2,3] #Must be set using set_rankings when a minigame ends.
+var rankings : Array[int]= [0,1,2,3] # Must be set using set_rankings when a minigame ends.
 var selected_minigame : MinigameData
-
-func set_rankings(ranks):
-	rankings = []
-	if len(ranks) != 4: return
-	var seen = []
-	for i in ranks:
-		if i in seen or i < 0 or i > 3: return
-		seen.append(i)
-	rankings = ranks
 
 func load_minigames():
 	var result = []
@@ -63,6 +67,14 @@ func load_minigames():
 			load_failed_dirs.append(i)
 	return result
 
+
+# REFACTOR: move to shared, make failures not silent
+func set_rankings(ranks : Array[int]):
+	rankings = []
+	if Interface.check_rankings(ranks):
+		rankings = ranks.duplicate()
+
+# REFACTOR: connect via signals, maybe move to Transition
 func end_minigame(ranks):
 	set_rankings(ranks)
 	Transition.transition_to("res://main_board/rooms/results.tscn")
