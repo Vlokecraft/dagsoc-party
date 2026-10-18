@@ -26,6 +26,12 @@ func sync_faces_to_interface() -> void:
 			return
 		faces.append(face.copy())
 	Interface.player_faces = faces
+func reset():
+	player_turn = 0
+	round = 0
+	player_positions = [0,0,0,0]
+	rankings = [0,1,2,3]
+	selected_minigame = null
 
 func next_turn():
 	var pos = rankings.find(player_turn)
