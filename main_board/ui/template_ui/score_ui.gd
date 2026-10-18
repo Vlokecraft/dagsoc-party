@@ -74,7 +74,7 @@ func finished():
 	for i in range(4):
 		zipped.append([scores[i], i])
 	zipped.sort()
-	var results = []
+	var results: Array[int] = []
 	for i in zipped:
 		results.append(i[1])
 	results.reverse()

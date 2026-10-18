@@ -19,6 +19,7 @@ var data : MinigameData:
 
 func _input(event):
 	if hovered and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		Global.sync_faces_to_interface()
 		Transition.transition_to(data.main_scene_path)
 
 func _ready():

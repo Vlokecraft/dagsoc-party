@@ -19,4 +19,5 @@ func _on_timer_timeout():
 
 func _input(event):
 	if continue_prompt.visible and (event.is_action_pressed("p1_button_bottom") or event.is_action_pressed("ui_accept")):
+		Global.sync_faces_to_interface()
 		Transition.transition_to(Global.selected_minigame.main_scene_path)

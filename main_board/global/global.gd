@@ -14,6 +14,19 @@ var round = 0
 func _ready() -> void:
 	Interface.minigame_finished.connect(end_minigame)
 
+func sync_faces_to_interface() -> void:
+	if player_faces.size() != player_count:
+		printerr("Expected one face per player slot (%s)." % player_count)
+		return
+
+	var faces: Array[FaceData] = []
+	for face in player_faces:
+		if face == null:
+			printerr("Player faces cannot be null.")
+			return
+		faces.append(face.copy())
+	Interface.player_faces = faces
+
 func next_turn():
 	var pos = rankings.find(player_turn)
 	print("pos is %s" % str(pos))

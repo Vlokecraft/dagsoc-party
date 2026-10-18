@@ -1,17 +1,18 @@
 extends Node
 
+var player_count :int = 4
+
 const PLAYER_COLOURS = [
 	Color("F27C6F"),
 	Color("28AAD4"),
 	Color("F8FF57"),
 	Color("523FB0")
 ]
+var player_faces :Array[FaceData] = [FaceData.new(), FaceData.new(), FaceData.new(), FaceData.new()]
 
-var player_count :int = 4
 
 signal minigame_finished(rankings: Array[int])
 signal minigame_failed(rankings: Array[int])
-
 
 # REFACTOR: new function
 func check_rankings(ranks : Array[int]) -> bool:
