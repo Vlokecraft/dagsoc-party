@@ -13,9 +13,8 @@ All minigames are stored in the `minigames` folder.
 Each minigame and their unique assets are stored in their own separate folder inside this.
 
 
-
-We have made an example minigame (`res://minigames/example_minigame/`) that you're reccomended to duplicate and work from as a base.
-### Minigame metadata
+We have made example minigames that you can duplicate and work from as a base.
+# Minigame metadata
 At the top level of a minigame's folder, there is a file called `data.tres`.
 This is required to exist here for a minigame to be read in.
 `data.tres` is a `MinigameData` resource (a custom prefab) with the following text fields:
@@ -23,6 +22,12 @@ This is required to exist here for a minigame to be read in.
 - Author
 - Description
    - This is a good place to put instructions.
+- Thumbnail
+   - Image displayed on the how to play screen.
 - Scene Path
    -  The relative path to the scene that will get loaded in when the minigame commences.
 	Double-click on your minigame's `data.tres` in the Files and you should be able to edit these fields in the Inspector.
+
+You can test your minigame by going to the minigames menu from the title screen and clicking on your game.
+
+# Input system
