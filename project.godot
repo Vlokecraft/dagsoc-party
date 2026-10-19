@@ -13,7 +13,7 @@ config_version=5
 config/name="DAGsoc Party"
 run/main_scene="uid://dopob5lfdh6su"
 config/features=PackedStringArray("4.8", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://bkq5padyf1ttf"
 
 [autoload]
 
