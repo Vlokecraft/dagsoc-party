@@ -41,7 +41,8 @@ func next_turn():
 	player_turn = rankings[pos+1]
 	return true	
 
-var rankings : Array[int]= [0,1,2,3] # Must be set using set_rankings when a minigame ends.
+# rankings[place] -> player
+var rankings : Array[int]= [0,1,2,3]
 var selected_minigame : MinigameData
 
 func load_minigames():

@@ -109,4 +109,5 @@ func _check_player_input() -> void:
 func _on_round_timer_timeout() -> void:
 	timer_label.text = "Time's up!"
 	await get_tree().create_timer(2.0).timeout
-	Interface.end_minigame(rankings.duplicate()) # necessary to finish the game, ranking is array player idx(0-3) -> position
+	# rankings[place] -> player;
+	Interface.end_minigame(rankings.duplicate())

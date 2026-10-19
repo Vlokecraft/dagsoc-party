@@ -32,6 +32,8 @@ func check_rankings(ranks : Array[int]) -> bool:
 
 	return true
 
+# ranks[place] -> player_index, with the winner first
+# Example: [2, 0, 1, 3] means Players 3, 1, 2, 4 finished in that order
 func end_minigame(ranks : Array[int]):
 	if check_rankings(ranks):
 		minigame_finished.emit(ranks.duplicate())
