@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://lj26fn31myw7"]
 
-[ext_resource type="Texture2D" uid="uid://bh1j10cye6oap" path="res://shared/faces/sprites/head.png" id="1_lkhs7"]
-[ext_resource type="Script" uid="uid://ps5gsrvlb4f7" path="res://shared/faces/player_visual_2d/player_visual_2d.gd" id="2_u7dve"]
-[ext_resource type="Texture2D" uid="uid://bta2ta006dpei" path="res://shared/faces/sprites/eyes.png" id="2_y12wj"]
-[ext_resource type="Texture2D" uid="uid://by542wghjv81p" path="res://shared/faces/sprites/noses.png" id="3_u7dve"]
-[ext_resource type="Texture2D" uid="uid://d3xq0p1l61iig" path="res://shared/faces/sprites/mouths.png" id="4_cph8g"]
+[ext_resource type="Texture2D" uid="uid://bh1j10cye6oap" path="res://shared/assets/textures/faces/head.png" id="1_lkhs7"]
+[ext_resource type="Script" uid="uid://ps5gsrvlb4f7" path="res://shared/drawing/player_visual_2d.gd" id="2_u7dve"]
+[ext_resource type="Texture2D" uid="uid://bta2ta006dpei" path="res://shared/assets/textures/faces/eyes.png" id="2_y12wj"]
+[ext_resource type="Texture2D" uid="uid://by542wghjv81p" path="res://shared/assets/textures/faces/noses.png" id="3_u7dve"]
+[ext_resource type="Texture2D" uid="uid://d3xq0p1l61iig" path="res://shared/assets/textures/faces/mouths.png" id="4_cph8g"]
 
 [node name="Player Visual" type="Sprite2D" unique_id=1416784719]
 self_modulate = Color(0.66999996, 0.824, 1, 1)

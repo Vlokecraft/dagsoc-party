@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dw0bjork54lp"]
 
-[ext_resource type="FontFile" uid="uid://dg7xe6qmki2r5" path="res://main_board/fonts/retro-pixel-cute-prop.ttf" id="1_e7bfs"]
+[ext_resource type="FontFile" uid="uid://dg7xe6qmki2r5" path="res://shared/assets/fonts/retro-pixel-cute-prop.ttf" id="1_e7bfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j863"]
 bg_color = Color(0.2546, 0.28921664, 0.67, 0.6431373)

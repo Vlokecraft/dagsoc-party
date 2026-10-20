@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MinigameData" format=3 uid="uid://wkn1sqa0ytyh"]
 
-[ext_resource type="Script" uid="uid://ciry1a2b6alm5" path="res://main_board/resources/MinigameData.gd" id="1_i2jao"]
+[ext_resource type="Script" uid="uid://ciry1a2b6alm5" path="res://shared/resources/MinigameData.gd" id="1_i2jao"]
 [ext_resource type="Texture2D" uid="uid://c23dkttokoern" path="res://icon.svg" id="2_sp5p1"]
 
 [resource]

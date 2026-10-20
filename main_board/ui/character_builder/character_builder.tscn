@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dcime5i6uyll1"]
 
 [ext_resource type="Script" uid="uid://k15f4n6ee712" path="res://main_board/ui/character_builder/character_builder.gd" id="1_8vwwu"]
-[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://default_theme.tres" id="1_g2on6"]
+[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://shared/ui/default_theme.tres" id="1_g2on6"]
 [ext_resource type="Texture2D" uid="uid://cosxu16m4254j" path="res://main_board/sprites/pixelarrow.png" id="3_5lal3"]
-[ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://shared/faces/player_visual_2d/player_visual_2d.tscn" id="4_ac8d8"]
+[ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://shared/drawing/player_visual_2d.tscn" id="4_ac8d8"]
 
 [node name="Control" type="Control" unique_id=2035132255]
 custom_minimum_size = Vector2(300, 0)

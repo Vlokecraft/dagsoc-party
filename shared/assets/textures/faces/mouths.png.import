@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bta2ta006dpei"
-path.s3tc="res://.godot/imported/eyes.png-a36ed467e6f29dfcf28c9b2a491c8439.s3tc.ctex"
+uid="uid://d3xq0p1l61iig"
+path.s3tc="res://.godot/imported/mouths.png-529a13249169daca02126e13c8765d69.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://shared/faces/sprites/eyes.png"
-dest_files=["res://.godot/imported/eyes.png-a36ed467e6f29dfcf28c9b2a491c8439.s3tc.ctex"]
+source_file="res://shared/assets/textures/faces/mouths.png"
+dest_files=["res://.godot/imported/mouths.png-529a13249169daca02126e13c8765d69.s3tc.ctex"]
 
 [params]
 

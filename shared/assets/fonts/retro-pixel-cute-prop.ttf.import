@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dg7xe6qmki2r5"
-path="res://.godot/imported/retro-pixel-cute-prop.ttf-44eebaf159a3c32f402b4fdd1dfa8bb1.fontdata"
+path="res://.godot/imported/retro-pixel-cute-prop.ttf-e10f84586302b7b899a2650ebf17092d.fontdata"
 
 [deps]
 
-source_file="res://main_board/fonts/retro-pixel-cute-prop.ttf"
-dest_files=["res://.godot/imported/retro-pixel-cute-prop.ttf-44eebaf159a3c32f402b4fdd1dfa8bb1.fontdata"]
+source_file="res://shared/assets/fonts/retro-pixel-cute-prop.ttf"
+dest_files=["res://.godot/imported/retro-pixel-cute-prop.ttf-e10f84586302b7b899a2650ebf17092d.fontdata"]
 
 [params]
 
