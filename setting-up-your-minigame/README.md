@@ -119,6 +119,37 @@ To get started:
 git clone https://github.com/hryspider/dagsoc-party
 git clone https://github.com/elf222/dagparty_minigame_template
 ```
-- open dagsoc-party/project.godot for trying out party, dagparty_minigame_template/project.godot
+You can use template repository as a template to your repository
+- open dagsoc-party/project.godot to try out the party, dagparty_minigame_template/project.godot for the template investigation/developing your minigame
 
 ### Symlinks
+
+When you work and test in both template and party projects you will need to sync shared/ to party's and mingames/<your-minigame> to template's respective folders.
+You can do it by manually copying, but you might want to set up symlinks.
+
+Symbolic links make files or folders available at another path.
+This workflow uses two links:
+
+1. Template's "shared/" link should point to Party's "shared/"
+2. Party's "minigames/<your-minigame>/" - to the template's "minigames/<your-minigame>/"
+
+#### macOS and Linux
+
+1. In terminal navigate to the directory containing both cloned repositories
+2. Run(with names changed apropriately):
+
+```bash
+ln -s "../dagsoc-party/shared" "dagparty_minigame_template/shared"
+ln -s "../../dagparty_minigame_template/minigames/minigame-template" "dagsoc-party/minigames/minigame-template"
+```
+
+#### Windows
+
+1. Open **Command Prompt (CMD) as Administrator**
+2. Navigate to the directory containing both cloned repositories
+3. Run(with names changed apropriately):
+
+```bash
+mklink /D "dagparty_minigame_template\shared" "..\dagsoc-party\shared"
+mklink /D "dagsoc-party\minigames\minigame-template" "..\..\dagparty_minigame_template\minigames\minigame-template"
+```
