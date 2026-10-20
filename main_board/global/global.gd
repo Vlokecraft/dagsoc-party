@@ -47,7 +47,6 @@ var selected_minigame : MinigameData
 func load_minigames():
 	var result = []
 	var minigame_dirs = DirAccess.get_directories_at("res://minigames/")
-	print(minigame_dirs)
 	var load_failed_dirs = []
 	for i in minigame_dirs:
 		var dir = "res://minigames/" + i

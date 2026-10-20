@@ -42,6 +42,10 @@ func _process(delta):
 func jump_to_places(positions: Array[Vector3], speed:=5):
 	jump_speed = speed
 	for pos in positions:
+		print(pos)
+		look_at(pos)
+		rotate_y(PI)
+		#rotation*=Vector3(0,-1,0)
 		if pos+offset != position:
 			jumping = true
 			progress = 0
