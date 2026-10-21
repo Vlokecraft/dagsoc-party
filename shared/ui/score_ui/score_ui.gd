@@ -19,12 +19,12 @@ var player_score_nodes = []
 var scores = [0,0,0,0]:
 	set(value):
 		scores = value
-		for i in range(Interface.player_count):
+		for i in range(Party.player_count):
 			player_score_nodes[i].set_score(scores[i])
 
 func _ready():
 	time = time
-	for i in range(Interface.player_count):
+	for i in range(Party.player_count):
 		var inst = SCORE_UI_PLAYER_COMPONENT.instantiate()
 		$HBoxContainer.add_child(inst)
 		inst.set_player(i)
@@ -71,7 +71,7 @@ func finished():
 	$AnimationPlayer.play("time_up")
 	await $AnimationPlayer.animation_finished
 	var zipped = []
-	for i in range(Interface.player_count):
+	for i in range(Party.player_count):
 		zipped.append([scores[i], i])
 	zipped.sort()
 	var results: Array[int] = []

@@ -37,7 +37,7 @@ This will make an action and you can add keys which activate it
 
 Note: arrows p1 actions include keyboard arrows, all other actions set up only from gamepad
 
-### Interface
+### Party
 
 Party is a global that you need to mount
 

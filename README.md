@@ -35,20 +35,20 @@ This is required to exist here for a minigame to be read in.
 
 You can test your minigame by going to the minigames menu from the title screen and clicking on your game.
 
-# Interface (globally available class)
+# Party (globally available class)
 ### Attributes
-`Interface` is a class you can get the attributes from for anything you like. You can also change them if you really want.
+`Party` is a class you can get the attributes from for anything you like. You can also change them if you really want.
 `int playercount` - Number of players.
 - Currently, the board only supports 4 players, but don't be discouraged from making 1, 2 or 3 player minigames. We're planning on making it a feature.
 - (The `res://main_board/ui/template_ui/score_ui.tscn`component supports 1-4 players and will display differently if you set playercount.)
 
 `Array[Color] PLAYER_COLOURS` - The colours of each player, using Godot's `Color` class.
-- `Interface.PLAYER_COLOURS[0]` Gives you the colour associated with Player **1**.
+- `Party.PLAYER_COLOURS[0]` Gives you the colour associated with Player **1**.
 - If you set a Node2D's `modulate` attribute to this, it multiplies all its colour by that player's colour. Good for if you make your own components.
 
 `Array[FaceData] player_faces` - The data for each player avatar's faces, using a custom type we've defined.
-### Using Interface to end the minigame/rankings
-The function `Interface.end_minigame()` expects an array of length 4, containing precisely the integers 0 to 3 in an order corresponding to player ranks.
+### Using Party to end the minigame/rankings
+The function `Party.end_minigame()` expects an array of length 4, containing precisely the integers 0 to 3 in an order corresponding to player ranks.
 The graphic below demonstrates what this is evaluated to.
 
 ![](main_board/sprites/ranks_guide.png)
