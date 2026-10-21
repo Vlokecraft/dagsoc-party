@@ -9,16 +9,16 @@ var data : FaceData:
 @export_range(0, 3) var player_number : int:
 	set(value):
 		player_number = value
-		data = Interface.player_faces[value]
-		self_modulate = Interface.PLAYER_COLOURS[value]
+		data = Party.player_faces[value]
+		self_modulate = Party.PLAYER_COLOURS[value]
 		
 
 func _ready():
 	if data == null:
-		data = Interface.player_faces[player_number]
+		data = Party.player_faces[player_number]
 	else:
 		_update_face()
-	self_modulate = Interface.PLAYER_COLOURS[player_number]
+	self_modulate = Party.PLAYER_COLOURS[player_number]
 
 func _update_face():
 	if data == null or get_child_count() == 0:

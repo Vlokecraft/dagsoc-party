@@ -78,6 +78,6 @@ func finished():
 	for i in zipped:
 		results.append(i[1])
 	results.reverse()
-	Interface.end_minigame(results)
+	Party.end_minigame(results)
 #func get_first(a):
 	#return a[0]

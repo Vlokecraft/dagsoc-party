@@ -39,43 +39,61 @@ Note: arrows p1 actions include keyboard arrows, all other actions set up only f
 
 ### Interface
 
-Interface is a global that you need to mount
+Party is a global that you need to mount
 
 - mg-party-interface.gd is placed in "shared/" in dagsoc-party
-- mount it as Interface with Project > Project Settings... > Globals > Select Script/Scene
+- mount it as Party with Project > Project Settings... > Globals > Select Script/Scene
 
 ### Assets
 
+``` GDScript
+# Player data
+Party.player_count
+Party.player_faces
+Party.PLAYER_COLOURS
 
+# Results and validation
+Party.end_minigame(rankings)
+Party.check_rankings(rankings)
+Party.minigame_finished.connect(_func)
+Party.minigame_failed.connect(_func)
 
+# Text
+Party.text.measure(text, font_size)
+Party.text.draw(self, text, position, font_size, colour)
+Party.text.FONT
+Party.text.DEFAULT_FONT_SIZE
+
+# Face visuals
+Party.faces.create(player_index)
+
+# UI
+Party.ui.create_score_ui()
+Party.ui.theme
+Party.ui.clock_texture
+
+# Existing shader resource
+Party.shaders.uv_glide
+```
 
 ## Handoffs
 
 Your game should have data.tres metadata file and submit player rankings
 
-### data.tres / metadata
+### data.tres
 
-change to your game's name and other customisable fields
-
-don't touch things before [resource]
-
-in [resource]
-- do not touch script
-- set title
-- set author
-- explain how to play
-- specify main scene path
-
+data.tres is a custom resource with minigame description and other metadata
+Open this file in Godot to edit Title, How To Play, etc.
 
 ### Rankings submission
 
 Finish your game with
 
 ``` GDScript
-Interface.end_minigame(rankings)
+Party.end_minigame(rankings)
 ```
 
-This sends DAGparty signal to take over and register player rankings.
+This sends DAGparty signal to take over and register player rankings. You can catch ot to draw custom stuff in standalone mode
 
 Format an array rankings like [3, 0, 2, 1],
 meaning:
@@ -102,7 +120,7 @@ To make your minigame interface with DAGparty you just need:
 1. Set up metadata with data.tres file
 2. Give DAGParty your minigame's results
 ``` GDScript
-Interface.end_minigame(rankings)
+Party.end_minigame(rankings)
 ```
 
 Everythings else helps minigames fit stylistically, starting from player colours and chosen avatars to UI elements like timers and backgrounds

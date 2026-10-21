@@ -12,7 +12,7 @@ var player_turn = 0 # eg: 0 means it's player 1's turn
 var round = 0
 
 func _ready() -> void:
-	Interface.minigame_finished.connect(_end_minigame)
+	Party.minigame_finished.connect(_end_minigame)
 
 func sync_faces_to_interface() -> void:
 	if player_faces.size() != player_count:
@@ -25,7 +25,7 @@ func sync_faces_to_interface() -> void:
 			printerr("Player faces cannot be null.")
 			return
 		faces.append(face.copy())
-	Interface.player_faces = faces
+	Party.player_faces = faces
 func reset():
 	player_turn = 0
 	round = 0
@@ -71,7 +71,7 @@ func load_minigames():
 
 func set_rankings(ranks : Array[int]):
 	rankings = []
-	if Interface.check_rankings(ranks):
+	if Party.check_rankings(ranks):
 		rankings = ranks.duplicate()
 	else:
 		printerr("Rankings were invalidated and rejected. %s" % [ranks])

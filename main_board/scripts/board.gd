@@ -40,7 +40,7 @@ func _ready():
 	while still_turns_left:
 		order_number_label.text = get_order_text()
 		turn_label.text = "Player %s's turn" % str(Global.player_turn+1)
-		turn_label.modulate = Interface.PLAYER_COLOURS[Global.player_turn]
+		turn_label.modulate = Party.PLAYER_COLOURS[Global.player_turn]
 		round_label.text = "Round %s" % str(Global.round)
 		path_follow_3d.target = players[Global.player_turn]
 		await get_tree().create_timer(0.3).timeout
@@ -110,7 +110,7 @@ func get_order_text():
 	for i in Global.rankings:
 		if Global.player_turn == i:
 			output += "[wave amp=100.0]"
-		output += "[color=#%s]%s[/color] " % [Interface.PLAYER_COLOURS[i].to_html(), str(i+1)]
+		output += "[color=#%s]%s[/color] " % [Party.PLAYER_COLOURS[i].to_html(), str(i+1)]
 		if Global.player_turn == i:
 			output += "[/wave]"
 	return output
