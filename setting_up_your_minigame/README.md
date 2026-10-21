@@ -41,7 +41,7 @@ Note: arrows p1 actions include keyboard arrows, all other actions set up only f
 
 Party is a global that you need to mount
 
-- mg-party-interface.gd is placed in "shared/" in dagsoc-party
+- mg_party_interface.gd is placed in "shared/" in dagsoc-party
 - mount it as Party with Project > Project Settings... > Globals > Select Script/Scene
 
 ### Assets
@@ -132,7 +132,7 @@ We prepared a [minigame template on GitHub](https://github.com/elf222/dagparty_m
 To get started:
 - Make sure you have git and Godot 4.8 dev6-beta1 installed
 - Navigate to the directory intended for DAGParty in the terminal/PowerShell
-- Run the script to clone DAGparty and minigame-template
+- Run the script to clone DAGparty and minigame_template
 ``` bash
 git clone https://github.com/hryspider/dagsoc-party
 git clone https://github.com/elf222/dagparty_minigame_template
@@ -158,7 +158,7 @@ This workflow uses two links:
 
 ```bash
 ln -s "../dagsoc-party/shared" "dagparty_minigame_template/shared"
-ln -s "../../dagparty_minigame_template/minigames/minigame-template" "dagsoc-party/minigames/minigame-template"
+ln -s "../../dagparty_minigame_template/minigames/minigame_template" "dagsoc-party/minigames/minigame_template"
 ```
 
 #### Windows
@@ -169,5 +169,5 @@ ln -s "../../dagparty_minigame_template/minigames/minigame-template" "dagsoc-par
 
 ```bash
 mklink /D "dagparty_minigame_template\shared" "..\dagsoc-party\shared"
-mklink /D "dagsoc-party\minigames\minigame-template" "..\..\dagparty_minigame_template\minigames\minigame-template"
+mklink /D "dagsoc-party\minigames\minigame_template" "..\..\dagparty_minigame_template\minigames\minigame_template"
 ```

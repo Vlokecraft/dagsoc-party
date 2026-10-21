@@ -5,7 +5,7 @@ Will contain instructions on how to modify the project.
 All the base menus, the board game system and general assets we've provided for minigames are stored in the `main_board` folder.
 Do not edit content in here when making your minigame, but feel free to use it.
 
-`default_theme.tres` is a simple theme that styles Buttons and sets the font of Control nodes to a pixel font (`res://shared/assets/fonts/retro-pixel-cute-prop.ttf`.)
+`default_theme.tres` is a simple theme that styles Buttons and sets the font of Control nodes to a pixel font (`res://shared/assets/fonts/retro_pixel_cute_prop.ttf`.)
 - Set the `theme` attribute of a Control node to this file to apply the same effect.
 
 ### Individual minigames

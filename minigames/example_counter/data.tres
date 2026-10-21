@@ -8,6 +8,6 @@ script = ExtResource("1_wm5r7")
 title = "Example Counter Minigame"
 author = "Harry"
 how_to_play = "This is a bit like the pullups minigame in Wii Party. Press the bottom button to increase your score. Highest score wins. Mainly a test of the leaderboard/timer system."
-main_scene_path = "res://minigames/example_counter/main_scene/countertest-main.tscn"
+main_scene_path = "res://minigames/example_counter/main_scene/countertest_main.tscn"
 thumbnail = ExtResource("2_8rlws")
 metadata/_custom_type_script = "uid://ciry1a2b6alm5"

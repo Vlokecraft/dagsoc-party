@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjpqfpa3x6f56"]
 
-[ext_resource type="Script" uid="uid://bentc335mlicp" path="res://minigames/minigame-template/scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bentc335mlicp" path="res://minigames/minigame_template/scripts/main.gd" id="1_ig7tw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
 font_size = 22

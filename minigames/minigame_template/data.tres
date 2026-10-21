@@ -8,5 +8,5 @@ script = ExtResource("1")
 title = "Template mini-game"
 author = "elf222"
 how_to_play = "Point to the player you want to swich places with, 1-Left, 2-Up, 3-Right, 4-Down."
-main_scene_path = "res://minigames/minigame-template/main.tscn"
+main_scene_path = "res://minigames/minigame_template/main.tscn"
 

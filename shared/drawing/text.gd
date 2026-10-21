@@ -1,6 +1,6 @@
 extends RefCounted
 
-const FONT: Font = preload("res://shared/assets/fonts/retro-pixel-cute-prop.ttf")
+const FONT: Font = preload("res://shared/assets/fonts/retro_pixel_cute_prop.ttf")
 const DEFAULT_FONT_SIZE: int = 32
 
 
