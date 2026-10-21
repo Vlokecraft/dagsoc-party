@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dfk887ybchhhg" path="res://main_board/objects/path_follow_3d.gd" id="2_ag8c5"]
 [ext_resource type="Script" uid="uid://b2g3d553ifp5c" path="res://main_board/resources/space_data.gd" id="2_mt5nb"]
 [ext_resource type="PackedScene" uid="uid://onpyx3kh26ao" path="res://main_board/objects/playerpiece.tscn" id="2_svsh1"]
-[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://shared/ui/default_theme.tres" id="5_7ur1y"]
+[ext_resource type="Theme" uid="uid://dovyuldovjivx" path="res://default_theme.tres" id="5_7ur1y"]
 [ext_resource type="Texture2D" uid="uid://puxwj1l83lbm" path="res://shared/assets/textures/ui/dagdicetile.png" id="7_j2xt5"]
 
 [sub_resource type="Resource" id="Resource_yye32"]

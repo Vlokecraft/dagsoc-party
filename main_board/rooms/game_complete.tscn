@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmpg0ghp6iby3"]
 
 [ext_resource type="Script" uid="uid://dvk4wdd4h8l8" path="res://main_board/rooms/game_complete.gd" id="1_pg507"]
-[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://shared/ui/default_theme.tres" id="4_uromb"]
+[ext_resource type="Theme" uid="uid://dovyuldovjivx" path="res://default_theme.tres" id="4_uromb"]
 [ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://shared/drawing/player_visual_2d.tscn" id="5_ks0mk"]
 
 [node name="Results" type="Control" unique_id=1993985079]
