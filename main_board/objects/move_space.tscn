@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bg4yj0u1mh8ic" path="res://main_board/objects/base_space.tscn" id="1_m5fhs"]
 [ext_resource type="Script" uid="uid://bd0l2id4prnxb" path="res://main_board/objects/move_space.gd" id="2_y5cwx"]
-[ext_resource type="FontFile" uid="uid://dg7xe6qmki2r5" path="res://main_board/fonts/retro-pixel-cute-prop.ttf" id="3_t2wdd"]
+[ext_resource type="FontFile" uid="uid://dg7xe6qmki2r5" path="res://shared/assets/fonts/retro_pixel_cute_prop.ttf" id="3_t2wdd"]
 
 [node name="Space" unique_id=643264467 instance=ExtResource("1_m5fhs")]
 script = ExtResource("2_y5cwx")

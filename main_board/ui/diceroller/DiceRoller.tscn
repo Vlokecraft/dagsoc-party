@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://opq7dn6lagp"]
 
 [ext_resource type="Script" uid="uid://h5euvustf5gc" path="res://main_board/ui/diceroller/dice_roller.gd" id="1_yiab3"]
-[ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://default_theme.tres" id="4_jorya"]
+[ext_resource type="Theme" uid="uid://dovyuldovjivx" path="res://default_theme.tres" id="4_jorya"]
 
 [sub_resource type="Environment" id="Environment_yiab3"]
 background_mode = 1

@@ -34,7 +34,7 @@ var timer = 0
 	set(value):
 		player = value
 		$Player.text = "Player %s" % str(value+1)
-		$Player.set("theme_override_colors/font_outline_color", (Interface.PLAYER_COLOURS[value]).blend(Color(0.0, 0.0, 0.0, 0.702)))
+		$Player.set("theme_override_colors/font_outline_color", (Party.PLAYER_COLOURS[value]).blend(Color(0.0, 0.0, 0.0, 0.702)))
 		$Control/Head.player_number = player
 		data = Global.player_faces[player]
 

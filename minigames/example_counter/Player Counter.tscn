@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crv8m1mq4kaxq"]
 
-[ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://shared/faces/player_visual_2d/player_visual_2d.tscn" id="1_3saoy"]
+[ext_resource type="PackedScene" uid="uid://lj26fn31myw7" path="res://shared/drawing/player_visual_2d.tscn" id="1_3saoy"]
 [ext_resource type="Script" uid="uid://caxmtdrjgd5pl" path="res://minigames/example_counter/player_counter.gd" id="1_cttoo"]
 
 [node name="PlayerCounter" type="Node2D" unique_id=1159467376]

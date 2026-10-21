@@ -12,7 +12,7 @@ var player_turn = 0 # eg: 0 means it's player 1's turn
 var round = 0
 
 func _ready() -> void:
-	Interface.minigame_finished.connect(end_minigame)
+	Party.minigame_finished.connect(_end_minigame)
 
 func sync_faces_to_interface() -> void:
 	if player_faces.size() != player_count:
@@ -25,7 +25,7 @@ func sync_faces_to_interface() -> void:
 			printerr("Player faces cannot be null.")
 			return
 		faces.append(face.copy())
-	Interface.player_faces = faces
+	Party.player_faces = faces
 func reset():
 	player_turn = 0
 	round = 0
@@ -41,7 +41,8 @@ func next_turn():
 	player_turn = rankings[pos+1]
 	return true	
 
-var rankings : Array[int]= [0,1,2,3] # Must be set using set_rankings when a minigame ends.
+# rankings[place] -> player
+var rankings : Array[int]= [0,1,2,3]
 var selected_minigame : MinigameData
 
 func load_minigames():
@@ -67,13 +68,13 @@ func load_minigames():
 	return result
 
 
-# REFACTOR: move to shared, make failures not silent
 func set_rankings(ranks : Array[int]):
 	rankings = []
-	if Interface.check_rankings(ranks):
+	if Party.check_rankings(ranks):
 		rankings = ranks.duplicate()
+	else:
+		printerr("Rankings were invalidated and rejected. %s" % [ranks])
 
-# REFACTOR: connect via signals, maybe move to Transition
-func end_minigame(ranks):
+func _end_minigame(ranks : Array[int]):
 	set_rankings(ranks)
 	Transition.transition_to("res://main_board/rooms/results.tscn")

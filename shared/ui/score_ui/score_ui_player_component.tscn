@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b5qb0ruw5uwt7"]
+
+[ext_resource type="Script" uid="uid://dkq6u76q3hvd7" path="res://shared/ui/score_ui/score_ui_player_component.gd" id="1_1pvkr"]
+[ext_resource type="Theme" uid="uid://dovyuldovjivx" path="res://default_theme.tres" id="2_j5554"]
+
+[sub_resource type="Gradient" id="Gradient_ki0c5"]
+offsets = PackedFloat32Array(0, 0.25, 0.75, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_txsxn"]
+gradient = SubResource("Gradient_ki0c5")
+
+[node name="PlayerScore" type="VBoxContainer" unique_id=1918633159]
+offset_top = 705.0
+offset_right = 40.0
+offset_bottom = 745.0
+theme_override_constants/separation = -32
+script = ExtResource("1_1pvkr")
+
+[node name="Label" type="Label" parent="." unique_id=1012435920]
+layout_mode = 2
+theme = ExtResource("2_j5554")
+theme_override_font_sizes/font_size = 76
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="TextureRect" parent="Label" unique_id=1106748200]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = 8.0
+offset_right = 53.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_txsxn")
+
+[node name="PlayerNameLabel" type="Label" parent="." unique_id=824726077]
+layout_mode = 2
+theme = ExtResource("2_j5554")
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
