@@ -1,5 +1,6 @@
 extends Node2D
 
+const SharedText = preload("res://shared/drawing/text.gd")
 const CIRCLE_RADIUS: float = 42.0
 
 var _player_number :int = 0
@@ -17,9 +18,8 @@ func _draw() -> void:
 	draw_arc(Vector2.ZERO, CIRCLE_RADIUS, 0.0, TAU, 48, Color.WHITE, 3.0, true)
 	
 	var player_text :String = "P%d" % _player_number
-	var font :Font = ThemeDB.fallback_font
 	var font_size :int = 25
-	var text_size :Vector2 = font.get_string_size(player_text, HORIZONTAL_ALIGNMENT_LEFT, -1.0, font_size)
+	var text_size :Vector2 = SharedText.measure_text(player_text, font_size)
 	var text_position :Vector2 = Vector2(-text_size.x * 0.5, text_size.y * 0.35)
 	
-	draw_string(font, text_position, player_text, HORIZONTAL_ALIGNMENT_LEFT, -1.0, font_size, Color.BLACK)
+	SharedText.draw_text(self, player_text, text_position, font_size, Color.BLACK)
