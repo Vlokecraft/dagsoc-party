@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cu14c0vt76uye"]
 
-[ext_resource type="Shader" uid="uid://ds5is36ehacrm" path="res://main_board/shaders/uv_glide.gdshader" id="1_hd4q2"]
+[ext_resource type="Shader" uid="uid://ds5is36ehacrm" path="res://shared/assets/shaders/uv_glide.gdshader" id="1_hd4q2"]
 [ext_resource type="Script" uid="uid://cfpptqb3geaik" path="res://main_board/rooms/minigame_viewer.gd" id="1_yamml"]
-[ext_resource type="Texture2D" uid="uid://puxwj1l83lbm" path="res://main_board/sprites/dagdicetile.png" id="2_fhfya"]
+[ext_resource type="Texture2D" uid="uid://puxwj1l83lbm" path="res://shared/assets/textures/ui/dagdicetile.png" id="2_fhfya"]
 [ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://shared/ui/default_theme.tres" id="5_hb28x"]
 [ext_resource type="Script" uid="uid://brn46314k2ke5" path="res://main_board/scripts/button_to_scene.gd" id="5_yamml"]
 

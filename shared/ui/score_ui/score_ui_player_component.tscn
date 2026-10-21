@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5qb0ruw5uwt7"]
 
-[ext_resource type="Script" uid="uid://dkq6u76q3hvd7" path="res://main_board/ui/template_ui/score_ui_player_component.gd" id="1_1pvkr"]
+[ext_resource type="Script" uid="uid://dkq6u76q3hvd7" path="res://shared/ui/score_ui/score_ui_player_component.gd" id="1_1pvkr"]
 [ext_resource type="Theme" uid="uid://dw0bjork54lp" path="res://shared/ui/default_theme.tres" id="2_j5554"]
 
 [sub_resource type="Gradient" id="Gradient_ki0c5"]
