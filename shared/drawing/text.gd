@@ -4,7 +4,7 @@ const FONT: Font = preload("res://shared/assets/fonts/retro_pixel_cute_prop.ttf"
 const DEFAULT_FONT_SIZE: int = 32
 
 
-static func measure_text(
+static func measure(
 	text: String,
 	font_size: int = DEFAULT_FONT_SIZE
 ) -> Vector2:
@@ -12,7 +12,7 @@ static func measure_text(
 
 
 ## Call from the canvas item's _draw(); position is the text baseline.
-static func draw_text(
+static func draw(
 	canvas_item: CanvasItem,
 	text: String,
 	position: Vector2,

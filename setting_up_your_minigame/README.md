@@ -54,11 +54,8 @@ Party.PLAYER_COLOURS
 
 # Results and validation
 Party.end_minigame(rankings)
-Party.check_rankings(rankings)
-Party.minigame_finished.connect(_func)
-Party.minigame_failed.connect(_func)
 
-# Text
+# Text, you can also just use default_theme.tres
 Party.text.measure(text, font_size)
 Party.text.draw(self, text, position, font_size, colour)
 Party.text.FONT

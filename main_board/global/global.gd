@@ -70,7 +70,7 @@ func load_minigames():
 
 func set_rankings(ranks : Array[int]):
 	rankings = []
-	if Party.check_rankings(ranks):
+	if Party._check_rankings(ranks):
 		rankings = ranks.duplicate()
 	else:
 		printerr("Rankings were invalidated and rejected. %s" % [ranks])

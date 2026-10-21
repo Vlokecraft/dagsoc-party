@@ -1,5 +1,8 @@
 extends Node
 
+const text = preload("res://shared/drawing/text.gd")
+const faces = preload("res://shared/drawing/text.gd")
+
 var player_count :int = 4
 
 const PLAYER_COLOURS = [
@@ -14,8 +17,7 @@ var player_faces :Array[FaceData] = [FaceData.new(), FaceData.new(), FaceData.ne
 signal minigame_finished(rankings: Array[int])
 signal minigame_failed(rankings: Array[int])
 
-# REFACTOR: new function
-func check_rankings(ranks : Array[int]) -> bool:
+func _check_rankings(ranks : Array[int]) -> bool:
 	if len(ranks) != player_count:
 		printerr("Rankings length %s does not match player count %s" % [len(ranks), player_count])
 		return false
@@ -35,7 +37,7 @@ func check_rankings(ranks : Array[int]) -> bool:
 # ranks[place] -> player_index, with the winner first
 # Example: [2, 0, 1, 3] means Players 3, 1, 2, 4 finished in that order
 func end_minigame(ranks : Array[int]):
-	if check_rankings(ranks):
+	if _check_rankings(ranks):
 		minigame_finished.emit(ranks.duplicate())
 	else:
 		minigame_failed.emit(ranks.duplicate())

@@ -1,6 +1,5 @@
 extends Node2D
 
-const SharedText = preload("res://shared/drawing/text.gd")
 const CIRCLE_RADIUS: float = 42.0
 
 var _player_number :int = 0
@@ -19,7 +18,7 @@ func _draw() -> void:
 	
 	var player_text :String = "P%d" % _player_number
 	var font_size :int = 25
-	var text_size :Vector2 = SharedText.measure_text(player_text, font_size)
+	var text_size :Vector2 = Party.text.measure(player_text, font_size)
 	var text_position :Vector2 = Vector2(-text_size.x * 0.5, text_size.y * 0.35)
 	
-	SharedText.draw_text(self, player_text, text_position, font_size, Color.BLACK)
+	Party.text.draw(self, player_text, text_position, font_size, Color.BLACK)
