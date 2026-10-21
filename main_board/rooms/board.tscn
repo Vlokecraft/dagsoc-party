@@ -250,7 +250,7 @@ transform = Transform3D(-0.47671455, 0, 0.8790868, 0, 1.0000002, 0, -0.8790868, 
 environment = SubResource("Environment_qt7l3")
 
 [node name="PlayerPiece" parent="." unique_id=1907818496 instance=ExtResource("2_svsh1")]
-transform = Transform3D(-0.47669056, 0, -0.87904257, 0, 0.9999998, 0, 0.87904257, 0, -0.47669056, 0.30979085, 0.00036621094, -0.56795955)
+transform = Transform3D(-0.47714671, 0, -0.878795, 0, 0.9999998, 0, 0.878795, 0, -0.47714671, 0.30979085, 0.00036621094, -0.56795955)
 
 [node name="PlayerPiece2" parent="." unique_id=1696047050 instance=ExtResource("2_svsh1")]
 transform = Transform3D(-0.47669056, 0, -0.87904257, 0, 0.9999998, 0, 0.87904257, 0, -0.47669056, 0.30979085, 0.00036621094, 1.411752)

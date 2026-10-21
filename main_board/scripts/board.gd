@@ -44,31 +44,32 @@ func _ready():
 		round_label.text = "Round %s" % str(Global.round)
 		path_follow_3d.target = players[Global.player_turn]
 		await get_tree().create_timer(0.3).timeout
-		print(Global.player_turn)
 		var result = await roll_dice()
 		var current_pos = Global.player_positions[Global.player_turn]
 		var target_pos = clampi(current_pos + result, 0, len(space_data)-1)
 		if result > 0:
-			print("player jumps to pos " + str(target_pos))
 			await players[Global.player_turn].jump_to_places(space_positions.slice(current_pos, target_pos+1))
+			print("finished waiting for hops")
 			#TODO: Decouple to code in space that edits the player and position
 			if space_data[target_pos].space_type == 3:
 				Global.player_positions[Global.player_turn] = target_pos
 				Transition.transition_to("res://main_board/rooms/game_complete.tscn")
 				return
 			var move_amount = space_data[target_pos].move_amount
+			print(move_amount, "move amount")
 			if move_amount != 0:
 				await get_tree().create_timer(1).timeout
 				current_pos = target_pos
 				target_pos = clampi(current_pos + move_amount, 0, len(space_data)-1)
 				var wait_time = 1*max(1.2,abs(current_pos-target_pos))
 				var position_array: Array[Vector3] = [(space_positions[target_pos])]
-				players[Global.player_turn].jump_to_places(position_array, 1/wait_time)
-				await get_tree().create_timer(wait_time+0.5).timeout
+				print(position_array, wait_time)
+				await players[Global.player_turn].jump_to_places(position_array, clamp(1/wait_time, 2, 5))
 			
 			
 		Global.player_positions[Global.player_turn] = target_pos
 		still_turns_left = Global.next_turn()
+		print("next turn done")
 		await get_tree().create_timer(0.5).timeout
 	Global.round += 1
 	new_round_label.text = "Now starting... Round %s" % str(Global.round)
@@ -93,7 +94,7 @@ func add_spaces_from_spacedata(data:Array[Space]):
 
 func roll_dice():
 	dice_roller.die_list = [REGULAR_DIE.instantiate()]
-	match Global.rankings.get(Global.player_turn):
+	match Global.rankings.find(Global.player_turn):
 		0: dice_roller.die_list.append(GOLD_DIE.instantiate())
 		1: dice_roller.die_list.append(SILVER_DIE.instantiate())
 		2: dice_roller.die_list.append(BRONZE_DIE.instantiate())

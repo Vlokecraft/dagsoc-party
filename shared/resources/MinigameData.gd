@@ -9,3 +9,4 @@ class_name MinigameData
 @export var how_to_play := "This is sample text. It might tell you how to play."
 @export_file("*.tscn") var main_scene_path := ""
 @export var thumbnail : Texture2D
+@export_range(1,4) var players := 4

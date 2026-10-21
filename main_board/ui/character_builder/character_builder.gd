@@ -53,7 +53,6 @@ func _process(delta):
 	var left_right = int(right) - int(left)
 	selected_setting += int(down)-int(up)
 	if left or right:
-		print(selected_setting)
 		match selected_setting:
 			0: data.eye_type += left_right
 			1: data.eye_position.x += left_right
