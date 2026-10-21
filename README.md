@@ -1,13 +1,12 @@
 # README
+<span style="color:rgb(255,128,128)">IMPORTANT: You will need at least [Godot 4.8](https://godotengine.org/download/archive/4.8-beta1/) (betas are out) to run the project due to menu offset transforms.</span>
 Welcome to DAGParty! This is a board game that loads in minigames that people make.
+Play the game to see how the general board works.
+
 To make a minigame, you can either:
 - Work on a cloned/downloaded version of this project (reccomended for beginners)
   - Download this repo by navigating to the green "Code" button, or type `git clone https://github.com/hryspider/dagsoc-party.git` into your Terminal.
 - (If you're more technical) refer to the content in `setting_up_your_minigame`, which lets you set up symlinks.
-
-
-
-<span style="color:rgb(255,128,128)">IMPORTANT: You will need at least [Godot 4.8](https://godotengine.org/download/archive/4.8-beta1/) (betas are out) to run the project due to menu offset transforms.</span>
 
 On the board side of things, there are 4 players, each with their own colours and faces players can customise before a game.
 - We'd highly suggest you keep the colours accurate for clarity.
@@ -29,6 +28,8 @@ On the board side of things, there are 4 players, each with their own colours an
 - Each minigame and their unique assets are stored in their own separate folder inside this.
 
 We have made example minigames that you can duplicate and work from as a base.
+- I reccomend duplicating the `blank_minigame` folder.
+
 You can test a minigame by going to the minigames menu from the title screen and clicking on your game.
 # Minigame metadata
 Your minigame folder must have a `data.tres` file.
@@ -89,3 +90,13 @@ On your Control (green) node:
 - Select the drop-down and choose "Quick Load".
 - `default_theme` should be selectable.
 - You should now have a pixel font! Change the size under Theme Overrides.
+
+# Scoreboard
+We've made a scoreboard you can just drag into your minigame!
+Search for **score_ui** in the editor's FileSystem, drag in `score_ui.tscn` and anchor it to fill the screen.
+Make sure it's the child of a CanvasLayer or Control node so it spans the whole screen!
+
+<img src="main_board/readme_imgs/score_ui.png" width="400"/>
+
+You can configure if there's a starting countdown, whether there's a timer and if the minigame end is handled for you (ranking based off scoreboard values)
+Have a look at it! I'll explain it soon!
